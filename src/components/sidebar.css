@@ -1,0 +1,96 @@
+/* Sidebar container */
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background-color: #22223b;
+  color: #f2e9e4;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+/* Header with title and close button */
+.sidebar-header {
+  padding: 20px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #4a4e69;
+}
+
+/* Close button */
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #f2e9e4;
+  cursor: pointer;
+}
+
+/* Sidebar toggle button (when sidebar is hidden) */
+.sidebar-toggle-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #4a4e69;
+  color: #f2e9e4;
+  border: none;
+  font-size: 22px;
+  padding: 8px 12px;
+  cursor: pointer;
+  z-index: 1100;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation menu */
+.sidebar-menu {
+  flex: 1;
+  padding: 20px 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Menu items */
+.sidebar-menu li {
+  padding: 12px 28px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  border-left: 4px solid transparent;
+  font-size: 1rem;
+}
+
+/* Hover and active menu item styles */
+.sidebar-menu li:hover {
+  background-color: #4a4e69;
+  color: #e0b1cb;
+}
+
+.sidebar-menu li.active {
+  background-color: #2a2a3d;
+  color: #bb86fc;
+  font-weight: bold;
+  border-left: 4px solid #bb86fc;
+}
+
+/* Footer section */
+.sidebar-footer {
+  padding: 16px 20px;
+  font-size: 0.9rem;
+  color: #bfc0c0;
+  border-top: 1px solid #4a4e69;
+  text-align: center;
+}
+
+/* Optional: hide sidebar completely using transform (for animation) */
+.sidebar-hidden {
+  transform: translateX(-100%);
+}

@@ -1,0 +1,29 @@
+.dark-card {
+  background-color: #1e1e2f;
+  color: #e0e0e0;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin: 1rem 0;
+  transition: transform 0.2s;
+}
+
+.dark-card:hover {
+  transform: translateY(-4px);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-subtitle {
+  font-size: 1rem;
+  color: #a0a0c0;
+  margin-bottom: 0.75rem;
+}
+
+.card-content {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
