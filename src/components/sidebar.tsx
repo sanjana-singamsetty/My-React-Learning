@@ -7,14 +7,18 @@ const Sidebar: React.FC = () => {
   const location = useLocation();
 
   const menuItems = [
-    "Home",
+    "Dashboard",
+    "React",
     "Node-Exp",
     "Database",
     "Testing",
     "Memes",
     "TO-DO",
   ];
-  const menuRoutes = ["/", "/about", "/form", "/test", "/Information", "/todo"];
+  const menuRoutes = React.useMemo(
+    () => ["/", "/home", "/about", "/form", "/test", "/Information", "/todo"],
+    []
+  );
 
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [isOpen, setIsOpen] = useState<boolean>(true); // Track if sidebar is open

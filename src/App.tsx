@@ -8,12 +8,14 @@ import About from "./pages/about";
 import ToDo from "./pages/to-do";
 import MdPage from "./components/md";
 import Testing from "./pages/Testing";
+import Homeland from "./components/land";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Homeland />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/Information" element={<Info />} />
         <Route path="/form" element={<Form />} />
         <Route path="/about" element={<About />} />

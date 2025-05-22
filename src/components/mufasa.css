@@ -1,0 +1,99 @@
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.animation {
+  margin-top: 40px;
+  height: 250px;
+}
+.mufasa-container {
+  min-height: 100vh;
+  overflow-y: auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  padding: 60px 20px;
+
+  /* Animated Gradient Background */
+  background: linear-gradient(270deg, #f8c9b9, #b2e3dd, #d7b8f9, #f8a5c2);
+  background-size: 800% 800%;
+  animation: gradient-move 20s ease infinite;
+}
+.mufasa-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Heading */
+.mufasa-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.mufasa-header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.mufasa-header h1 span {
+  color: #ec4899; /* pink */
+}
+
+.mufasa-header p {
+  font-size: 1.25rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Cards */
+.mufasa-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media (min-width: 768px) {
+  .mufasa-cards {
+    flex-direction: row;
+  }
+}
+
+.mufasa-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.mufasa-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.mufasa-card .icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.mufasa-card h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.mufasa-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
