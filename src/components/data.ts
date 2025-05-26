@@ -6,6 +6,13 @@ export const cardData = [
     content:
       "The MERN stack is a popular web development stack that consists of MongoDB, Express.js, React.js, and Node.js.",
   },
+  {
+    title: "Redux",
+    subtitle: "react - redux",
+    filepath: "/learning/redux.md",
+    content:
+      "The MERN stack is a popular web development stack that consists of MongoDB, Express.js, React.js, and Node.js.",
+  },
   // 🔹 React Core Concepts
   {
     title: "MERN Stack APP",

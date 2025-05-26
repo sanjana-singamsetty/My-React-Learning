@@ -24,7 +24,7 @@ export default function Mufasa() {
         <div className="mufasa-cards">
           <div className="mufasa-card">
             <div className="icon">✨</div>
-            <h2>A very Quick Rampl</h2>
+            <h2>A very Quick Ramp</h2>
             <p>
               This page brings essential topics right to your fingertips —
               offering a concise and clear overview of key concepts in React and
