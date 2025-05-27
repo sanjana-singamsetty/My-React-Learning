@@ -135,6 +135,13 @@ export const cardData = [
     content:
       "Alternative to `useState` for managing complex state logic in components.",
   },
+    {
+    title: "useLoc",
+    subtitle: "React UseLoc",
+    filepath: "/hooks/useLoc.md",
+    content:
+      "Alternative to `useState` for managing complex state logic in components.",
+  },
   {
     title: "Custom Hooks",
     subtitle: "Your Own Hooks",
