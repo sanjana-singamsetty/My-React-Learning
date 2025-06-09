@@ -9,6 +9,8 @@ import ToDo from "./pages/to-do";
 import MdPage from "./components/md";
 import Testing from "./pages/Testing";
 import Homeland from "./components/land";
+import Network from "./pages/network";
+import Fullstack from "./pages/Fullstack";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/todo" element={<ToDo />} />
         <Route path="/test" element={<Testing />} />
+        <Route path="/network" element={<Network />} />
+        <Route path="/fullstack" element={<Fullstack />} />
         <Route path="/view" element={<MdPage />} />
       </Routes>
     </Router>

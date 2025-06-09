@@ -124,7 +124,7 @@ export const cardData = [
   {
     title: "useCallback",
     subtitle: "React Hook",
-    filepath: "/hooks/9-UseCallback.md",
+    filepath: "/hooks/9-UseCallBack.md",
     content:
       "Returns a memoized version of a callback that only changes if one of the dependencies has changed.",
   },
@@ -135,7 +135,7 @@ export const cardData = [
     content:
       "Alternative to `useState` for managing complex state logic in components.",
   },
-    {
+  {
     title: "useLoc",
     subtitle: "React UseLoc",
     filepath: "/hooks/useLoc.md",

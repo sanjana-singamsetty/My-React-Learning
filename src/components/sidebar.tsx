@@ -12,11 +12,23 @@ const Sidebar: React.FC = () => {
     "Node-Exp",
     "Database",
     "Testing",
+    "Networking",
+
     "Memes",
     "TO-DO",
   ];
   const menuRoutes = React.useMemo(
-    () => ["/", "/home", "/about", "/form", "/test", "/Information", "/todo"],
+    () => [
+      "/",
+      "/home",
+      "/about",
+      "/form",
+      "/test",
+      "/network",
+
+      "/Information",
+      "/todo",
+    ],
     []
   );
 
