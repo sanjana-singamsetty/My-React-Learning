@@ -1,29 +1,100 @@
+.card-header-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.card-read-check {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #10b981;
+  background: #e8faf4;
+  border: 1.5px solid #b8f0da;
+  border-radius: 20px;
+  padding: 3px 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dark-card.is-read {
+  border-color: #10b98130;
+  box-shadow: 4px 4px 0 #10b98120;
+}
+
+.dark-card.is-read .card-top-bar {
+  background: #10b981;
+}
+
 .dark-card {
-  background-color: #1e1e2f;
-  color: #e0e0e0;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  margin: 1rem 0;
-  transition: transform 0.2s;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.4rem 1.5rem 2.8rem;
+  border: 2.5px solid #e8e3ff;
+  box-shadow: 4px 4px 0 #e8e3ff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-top-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--card-color, #8b5cf6);
+  border-radius: 16px 16px 0 0;
 }
 
 .dark-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
+  box-shadow: 6px 6px 0 var(--card-color, #8b5cf6);
+  border-color: var(--card-color, #8b5cf6);
+}
+
+.card-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 10px;
+  background: #f3eeff;
+  color: var(--card-color, #8b5cf6);
+  border: 1.5px solid #ddd5ff;
 }
 
 .card-title {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin: 0 0 6px;
+  line-height: 1.3;
 }
 
 .card-subtitle {
-  font-size: 1rem;
-  color: #a0a0c0;
-  margin-bottom: 0.75rem;
+  font-size: 0.82rem;
+  color: #6b7280;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.4;
 }
 
-.card-content {
-  font-size: 0.95rem;
-  line-height: 1.5;
+.card-arrow {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #d1d5db;
+  transition: all 0.2s ease;
+}
+
+.dark-card:hover .card-arrow {
+  color: var(--card-color, #8b5cf6);
+  transform: translateX(5px);
 }

@@ -1,0 +1,186 @@
+/* ── Floating button ── */
+@keyframes fabFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  30%       { transform: translateY(-8px) rotate(12deg); }
+  60%       { transform: translateY(-4px) rotate(-6deg); }
+}
+
+.paint-fab {
+  position: fixed;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ec4899, #8b5cf6);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  z-index: 9998;
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.55), 0 0 0 3px white;
+  user-select: none;
+  animation: fabFloat 4s ease-in-out infinite;
+  transition: box-shadow 0.2s;
+}
+
+.paint-fab:hover {
+  box-shadow: 0 6px 28px rgba(139, 92, 246, 0.7), 0 0 0 3px white;
+}
+
+.paint-fab.dragging {
+  cursor: grabbing;
+  animation: none;
+  transform: scale(1.12) rotate(20deg);
+  box-shadow: 0 10px 36px rgba(139, 92, 246, 0.7), 0 0 0 3px white;
+}
+
+/* ── Overlay ── */
+@keyframes overlayIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.paint-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: overlayIn 0.18s ease;
+}
+
+/* ── Panel ── */
+@keyframes panelPop {
+  from { transform: scale(0.75) translateY(20px); opacity: 0; }
+  to   { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.paint-panel {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.3), 0 0 0 3px rgba(139, 92, 246, 0.25);
+  animation: panelPop 0.28s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* ── Toolbar ── */
+.paint-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #f8f6ff;
+  border-bottom: 2px solid #e8e3ff;
+}
+
+.paint-colors {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.color-dot {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+  transition: transform 0.15s, box-shadow 0.15s;
+  flex-shrink: 0;
+}
+
+.color-dot:hover {
+  transform: scale(1.2);
+}
+
+.color-dot.active {
+  transform: scale(1.25);
+  box-shadow: 0 0 0 3px #8b5cf6;
+}
+
+.paint-divider {
+  width: 1px;
+  height: 28px;
+  background: #e0dbff;
+  margin: 0 4px;
+}
+
+.brush-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.brush-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #9ca3af;
+  white-space: nowrap;
+  font-family: 'Nunito', sans-serif;
+}
+
+.brush-slider {
+  width: 80px;
+  accent-color: #8b5cf6;
+  cursor: pointer;
+}
+
+.brush-val {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #8b5cf6;
+  min-width: 18px;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+}
+
+.tool-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: white;
+  border: 2px solid #e8e3ff;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: #374151;
+  transition: all 0.18s;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.tool-btn:hover {
+  border-color: #8b5cf6;
+  color: #8b5cf6;
+  background: #f8f6ff;
+}
+
+.tool-btn.active {
+  background: #8b5cf6;
+  color: white;
+  border-color: #8b5cf6;
+}
+
+.save-btn:hover {
+  border-color: #10b981;
+  color: #10b981;
+}
+
+.close-paint:hover {
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+/* ── Canvas ── */
+.paint-canvas {
+  display: block;
+  cursor: crosshair;
+  touch-action: none;
+  background: #fff;
+}

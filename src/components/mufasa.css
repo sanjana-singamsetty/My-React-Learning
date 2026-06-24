@@ -1,99 +1,308 @@
 @keyframes gradient-move {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
-.animation {
-  margin-top: 40px;
-  height: 250px;
-}
+
 .mufasa-container {
   min-height: 100vh;
-  overflow-y: auto;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
-  padding: 60px 20px;
-
-  /* Animated Gradient Background */
-  background: linear-gradient(270deg, #f8c9b9, #b2e3dd, #d7b8f9, #f8a5c2);
-  background-size: 800% 800%;
-  animation: gradient-move 20s ease infinite;
+  font-family: 'Nunito', sans-serif;
+  color: #1a1a2e;
+  padding: 60px 2.5rem 4rem;
+  margin-left: 240px;
+  background: linear-gradient(270deg, #fde8f0, #e6f8f4, #ede8ff, #fde8f0);
+  background-size: 400% 400%;
+  animation: gradient-move 18s ease infinite;
 }
+
 .mufasa-wrapper {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
-/* Heading */
-.mufasa-header {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.mufasa-header h1 {
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: 20px;
-}
-
-.mufasa-header h1 span {
-  color: #ec4899; /* pink */
-}
-
-.mufasa-header p {
-  font-size: 1.25rem;
-  color: #444;
-  line-height: 1.6;
-}
-
-/* Cards */
-.mufasa-cards {
+/* ── Topic chips ── */
+.mufasa-chips {
   display: flex;
-  flex-direction: column;
-  gap: 40px;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 2.5rem;
 }
 
-@media (min-width: 768px) {
-  .mufasa-cards {
-    flex-direction: row;
-  }
+.topic-chip {
+  padding: 6px 16px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 2px solid rgba(139, 92, 246, 0.25);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #5b21b6;
+  backdrop-filter: blur(6px);
+}
+
+/* ── Hero ── */
+.mufasa-hero {
+  text-align: center;
+  padding-bottom: 3rem;
+}
+
+.mufasa-heading {
+  font-size: 4.5rem;
+  font-weight: 900;
+  line-height: 1.05;
+  margin: 0 0 1.2rem;
+  color: #1a1a2e;
+  letter-spacing: -2px;
+}
+
+.heading-gradient {
+  background: linear-gradient(135deg, #ec4899, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.mufasa-subtitle {
+  font-size: 1.2rem;
+  color: #4b5563;
+  line-height: 1.7;
+  max-width: 520px;
+  margin: 0 auto 2rem;
+  font-weight: 500;
+}
+
+.mufasa-stats {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.stat-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 2.5px solid rgba(139, 92, 246, 0.2);
+  border-radius: 40px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  backdrop-filter: blur(6px);
+  box-shadow: 3px 3px 0 rgba(139, 92, 246, 0.12);
+}
+
+.streak-chip {
+  background: rgba(249, 115, 22, 0.1);
+  border-color: rgba(249, 115, 22, 0.3);
+  color: #ea580c;
+}
+
+.mufasa-cta-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 34px;
+  background: linear-gradient(135deg, #ec4899, #8b5cf6);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 4px 4px 0 rgba(139, 92, 246, 0.35);
+  font-family: 'Nunito', sans-serif;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 6px 6px 0 rgba(139, 92, 246, 0.45);
+}
+
+.cta-btn-secondary {
+  background: rgba(255,255,255,0.85);
+  color: #8b5cf6;
+  border: 2.5px solid rgba(139,92,246,0.3);
+  box-shadow: 3px 3px 0 rgba(139,92,246,0.15);
+  padding: 12px 22px;
+}
+
+.cta-btn-secondary:hover {
+  background: white;
+  box-shadow: 4px 4px 0 rgba(139,92,246,0.3);
+}
+
+.stat-pill-read {
+  background: rgba(16,185,129,0.1);
+  border-color: rgba(16,185,129,0.3);
+  color: #059669;
+}
+
+/* Recently visited */
+.mufasa-section {
+  margin-bottom: 2rem;
+}
+
+.mufasa-section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: #1a1a2e;
+  margin: 0 0 1rem;
+}
+
+.mufasa-recent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+}
+
+.mufasa-recent-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.85);
+  border: 2px solid rgba(255,255,255,0.95);
+  border-radius: 14px;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.06);
+  cursor: pointer;
+  transition: all 0.2s;
+  border-left: 4px solid var(--recent-color, #8b5cf6);
+}
+
+.mufasa-recent-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 5px 5px 0 var(--recent-color, #8b5cf6);
+  border-color: var(--recent-color, #8b5cf6);
+}
+
+.recent-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.recent-title {
+  flex: 1;
+  font-size: 0.86rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recent-arrow {
+  color: #9090b0;
+  flex-shrink: 0;
+}
+
+/* ── Spline ── */
+.spline-wrapper {
+  height: 260px;
+  margin: 0 -1rem 3rem;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 2.5px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ── Feature cards ── */
+.mufasa-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 
 .mufasa-card {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
   border-radius: 20px;
-  padding: 30px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  flex: 1;
-  transition: all 0.3s ease;
-  text-align: center;
+  padding: 2rem;
+  border: 2.5px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.07);
+  transition: all 0.25s ease;
 }
 
 .mufasa-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 8px 8px 0 rgba(139, 92, 246, 0.2);
+  border-color: rgba(139, 92, 246, 0.35);
 }
 
-.mufasa-card .icon {
-  font-size: 2rem;
-  margin-bottom: 10px;
+.feature-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .mufasa-card h2 {
-  font-size: 1.5rem;
-  color: #333;
-  margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin: 0 0 0.6rem;
 }
 
 .mufasa-card p {
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.5;
+  font-size: 0.92rem;
+  color: #4b5563;
+  line-height: 1.65;
+  font-weight: 500;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .mufasa-container {
+    margin-left: 0;
+    padding: 80px 1.5rem 3rem;
+  }
+  .mufasa-heading {
+    font-size: 2.8rem;
+    letter-spacing: -1px;
+  }
+}
+
+/* Dark mode for new elements */
+[data-theme="dark"] .mufasa-section-title {
+  color: #e0e0f0;
+}
+
+[data-theme="dark"] .mufasa-recent-card {
+  background: rgba(26,26,46,0.9);
+  border-color: #2d2d4e;
+  box-shadow: 3px 3px 0 #0f0f1a;
+}
+
+[data-theme="dark"] .mufasa-recent-card:hover {
+  box-shadow: 5px 5px 0 var(--recent-color, #8b5cf6);
+}
+
+[data-theme="dark"] .recent-title { color: #e0e0f0; }
+[data-theme="dark"] .recent-arrow { color: #5050a0; }
+
+[data-theme="dark"] .cta-btn-secondary {
+  background: rgba(26,26,46,0.9);
+  border-color: rgba(139,92,246,0.35);
+}
+
+[data-theme="dark"] .stat-pill-read {
+  background: rgba(16,185,129,0.15);
+  border-color: rgba(16,185,129,0.25);
 }

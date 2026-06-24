@@ -1,11 +1,45 @@
-.sid-container {
-  background-color: #f5f3ff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100vh;
+.memes-loading {
+  color: #9ca3af;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 2rem 0;
 }
-.section {
-  /* margin: 50px; */
-  /* Light Lavender */
+
+.memes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.meme-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 2.5px solid #e8e3ff;
+  box-shadow: 4px 4px 0 #e8e3ff;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.meme-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 6px 6px 0 #ef444440;
+  border-color: #ef4444;
+}
+
+.meme-img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+}
+
+.meme-name {
+  padding: 10px 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #374151;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

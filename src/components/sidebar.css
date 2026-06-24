@@ -1,96 +1,214 @@
-/* Sidebar container */
 .sidebar {
   width: 240px;
   height: 100vh;
-  background-color: #22223b;
-  color: #f2e9e4;
+  background: #1a1a2e;
   display: flex;
   flex-direction: column;
   position: fixed;
   left: 0;
   top: 0;
-  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
   z-index: 1000;
+  border-right: 2px solid #2d2d4e;
 }
 
-/* Header with title and close button */
 .sidebar-header {
-  padding: 20px;
-  font-size: 1.6rem;
-  font-weight: bold;
-  letter-spacing: 1px;
+  padding: 20px 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #4a4e69;
+  border-bottom: 1.5px solid #2d2d4e;
 }
 
-/* Close button */
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-logo {
+  width: 34px;
+  height: 34px;
+  background: linear-gradient(135deg, #ec4899, #8b5cf6);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 16px;
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  box-shadow: 0 2px 10px rgba(236, 72, 153, 0.45);
+}
+
+.sidebar-name {
+  font-size: 1.15rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #ec4899, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.5px;
+}
+
 .close-btn {
-  background: none;
-  border: none;
-  font-size: 20px;
-  color: #f2e9e4;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid #2d2d4e;
+  color: #7070a0;
   cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s;
 }
 
-/* Sidebar toggle button (when sidebar is hidden) */
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f2e9e4;
+}
+
 .sidebar-toggle-btn {
   position: fixed;
-  top: 20px;
-  left: 20px;
-  background-color: #4a4e69;
-  color: #f2e9e4;
-  border: none;
-  font-size: 22px;
-  padding: 8px 12px;
+  top: 16px;
+  left: 16px;
+  background: #1a1a2e;
+  color: #ec4899;
+  border: 2px solid #ec4899;
+  padding: 8px 10px;
   cursor: pointer;
   z-index: 1100;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 12px rgba(236, 72, 153, 0.3);
+  transition: all 0.2s;
 }
 
-/* Navigation menu */
+.sidebar-toggle-btn:hover {
+  background: #ec4899;
+  color: white;
+}
+
 .sidebar-menu {
   flex: 1;
-  padding: 20px 0;
+  padding: 12px 8px;
   margin: 0;
   list-style: none;
+  overflow-y: auto;
 }
 
-/* Menu items */
 .sidebar-menu li {
-  padding: 12px 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-  border-left: 4px solid transparent;
-  font-size: 1rem;
+  border-radius: 12px;
+  margin-bottom: 2px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #7070a0;
+  transition: all 0.18s ease;
+  border: 1.5px solid transparent;
 }
 
-/* Hover and active menu item styles */
 .sidebar-menu li:hover {
-  background-color: #4a4e69;
-  color: #e0b1cb;
+  background: rgba(139, 92, 246, 0.12);
+  color: #d0d0f0;
+  border-color: rgba(139, 92, 246, 0.2);
 }
 
 .sidebar-menu li.active {
-  background-color: #2a2a3d;
-  color: #bb86fc;
-  font-weight: bold;
-  border-left: 4px solid #bb86fc;
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.15), rgba(139, 92, 246, 0.15));
+  color: #ec4899;
+  border-color: rgba(236, 72, 153, 0.35);
 }
 
-/* Footer section */
+.sidebar-menu li.active .menu-icon {
+  color: #ec4899;
+}
+
+.menu-icon {
+  flex-shrink: 0;
+  color: inherit;
+}
+
+.sidebar-streak {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-top: 1.5px solid #2d2d4e;
+}
+
+.streak-icon {
+  color: #f97316;
+}
+
+.streak-text {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #f97316;
+}
+
+.sidebar-progress {
+  padding: 12px 16px;
+  border-top: 1.5px solid #2d2d4e;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #5a5a8a;
+  margin-bottom: 6px;
+}
+
+.progress-count {
+  color: #ec4899;
+}
+
+.progress-track {
+  height: 6px;
+  background: #2d2d4e;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ec4899, #8b5cf6);
+  border-radius: 10px;
+  transition: width 0.4s ease;
+  min-width: 4px;
+}
+
 .sidebar-footer {
-  padding: 16px 20px;
-  font-size: 0.9rem;
-  color: #bfc0c0;
-  border-top: 1px solid #4a4e69;
-  text-align: center;
+  padding: 12px 16px;
+  font-size: 0.8rem;
+  color: #4a4a6a;
+  border-top: 1.5px solid #2d2d4e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
 }
 
-/* Optional: hide sidebar completely using transform (for animation) */
-.sidebar-hidden {
-  transform: translateX(-100%);
+.theme-toggle {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid #2d2d4e;
+  color: #7070a0;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.theme-toggle:hover {
+  background: rgba(236, 72, 153, 0.15);
+  color: #ec4899;
+  border-color: rgba(236, 72, 153, 0.4);
 }

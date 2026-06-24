@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./to-do.css";
 import Sidebar from "../components/sidebar";
+import { ListTodo } from "lucide-react";
 
 interface Todo {
   id: number;
@@ -54,40 +55,44 @@ const ToDo: React.FC = () => {
   };
 
   return (
-    <div className="todo-container">
+    <div className="page-layout">
       <Sidebar />
-      <div className="todo-app">
-        <h1 className="title">Task Manager</h1>
-
-        <div className="todo-card">
-          <div className="todo-input-section">
-            <input
-              type="text"
-              placeholder="What's on your mind?"
-              value={newTodo}
-              onChange={(e) => setNewTodo(e.target.value)}
-            />
-            <button onClick={handleAddTodo}>Add</button>
+      <main className="page-content">
+        <div className="page-header">
+          <div className="page-header-icon" style={{ background: "rgba(139,92,246,0.1)" }}>
+            <ListTodo size={26} color="#8b5cf6" />
           </div>
-
-          <div className="todo-list">
-            {todos.map((todo) => (
-              <div key={todo.id} className="todo-item">
-                <span>
-                  {todo.completed ? "✅" : "📝"} {todo.text}
-                </span>
-                <button
-                  className="delete-btn"
-                  onClick={() => handleDeleteTodo(todo.id)}
-                >
-                  ❌
-                </button>
-              </div>
-            ))}
-            {todos.length === 0 && <p>No todos yet!</p>}
+          <div>
+            <h1 className="page-title">TO-DO</h1>
+            <p className="page-desc">Track your tasks and goals</p>
           </div>
         </div>
-      </div>
+        <div className="todo-page-content">
+          <div className="todo-app">
+            <div className="todo-card">
+              <div className="todo-input-section">
+                <input
+                  type="text"
+                  placeholder="What's on your mind?"
+                  value={newTodo}
+                  onChange={(e) => setNewTodo(e.target.value)}
+                  onKeyDown={(e) => e.key === "Enter" && handleAddTodo()}
+                />
+                <button onClick={handleAddTodo}>Add</button>
+              </div>
+              <div className="todo-list">
+                {todos.map((todo) => (
+                  <div key={todo.id} className="todo-item">
+                    <span>{todo.completed ? "✅" : "📝"} {todo.text}</span>
+                    <button className="delete-btn" onClick={() => handleDeleteTodo(todo.id)}>❌</button>
+                  </div>
+                ))}
+                {todos.length === 0 && <p className="todo-empty">No tasks yet — add one above!</p>}
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
   );
 };

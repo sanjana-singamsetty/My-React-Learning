@@ -1,16 +1,24 @@
 import React from "react";
-import Header from "../components/header";
 import Sidebar from "../components/sidebar";
-import Footer from "../components/footer";
 import Section from "../components/section";
+import { Code2 } from "lucide-react";
 
 const Home: React.FC = () => {
   return (
-    <div>
-      <Header />
+    <div className="page-layout">
       <Sidebar />
-      <Section title="Section Title">This is the section content.</Section>
-      <Footer />
+      <main className="page-content">
+        <div className="page-header">
+          <div className="page-header-icon" style={{ background: "rgba(139,92,246,0.1)" }}>
+            <Code2 size={26} color="#8b5cf6" />
+          </div>
+          <div>
+            <h1 className="page-title">React</h1>
+            <p className="page-desc">Core concepts, hooks, and patterns</p>
+          </div>
+        </div>
+        <Section />
+      </main>
     </div>
   );
 };

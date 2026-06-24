@@ -1,34 +1,36 @@
 import React from "react";
 import Card from "./card";
 import { cardData } from "./data";
-import "./section.css";
 import { useNavigate } from "react-router-dom";
 
-interface SectionProps {
-  title: string;
-  children: React.ReactNode;
-}
+const getCardMeta = (subtitle: string = ""): { color: string; label: string } => {
+  const lower = subtitle.toLowerCase();
+  if (lower.includes("hook")) return { color: "#ec4899", label: "Hook" };
+  if (lower.includes("redux")) return { color: "#f97316", label: "Redux" };
+  return { color: "#8b5cf6", label: "React" };
+};
 
-const Section: React.FC<SectionProps> = ({ title, children }) => {
+const Section: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="section">
-      <div className="card-grid">
-        {cardData.map((item, index) => (
+    <div className="card-grid">
+      {cardData.map((item, index) => {
+        const { color, label } = getCardMeta(item.subtitle);
+        return (
           <Card
             key={index}
             title={item.title}
             subtitle={item.subtitle}
             content={""}
-            onClick={() => {
-              navigate(`/view?file=${encodeURIComponent(item.filepath)}`);
-              console.log(item.filepath);
-            }}
+            color={color}
+            badgeLabel={label}
+            filepath={item.filepath}
+            onClick={() => navigate(`/view?file=${encodeURIComponent(item.filepath)}`)}
           />
-        ))}
-      </div>
-    </section>
+        );
+      })}
+    </div>
   );
 };
 

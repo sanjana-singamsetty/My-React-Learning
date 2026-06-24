@@ -1,0 +1,123 @@
+.search-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  max-width: 680px;
+}
+
+.search-icon-inner {
+  position: absolute;
+  left: 16px;
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: 14px 48px 14px 48px;
+  border-radius: 16px;
+  border: 2.5px solid #e8e3ff;
+  background: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+  color: #1a1a2e;
+  outline: none;
+  box-shadow: 4px 4px 0 #e8e3ff;
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  border-color: #8b5cf6;
+  box-shadow: 4px 4px 0 rgba(139,92,246,0.25);
+}
+
+.search-input::placeholder {
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+.search-clear {
+  position: absolute;
+  right: 14px;
+  background: #f3f0ff;
+  border: none;
+  color: #8b5cf6;
+  font-size: 0.8rem;
+  font-weight: 800;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: all 0.18s;
+}
+
+.search-clear:hover {
+  background: #8b5cf6;
+  color: white;
+}
+
+.search-count {
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+.search-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #374151;
+}
+
+.search-empty p {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.search-empty-sub {
+  color: #9ca3af !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+}
+
+.search-hints {
+  padding: 1rem 0;
+}
+
+.hints-label {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 1rem;
+}
+
+.hints-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hint-chip {
+  padding: 8px 18px;
+  border-radius: 20px;
+  background: #f8f6ff;
+  border: 2px solid #e8e3ff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #8b5cf6;
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+  transition: all 0.18s ease;
+}
+
+.hint-chip:hover {
+  background: #8b5cf6;
+  color: white;
+  border-color: #8b5cf6;
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 0 rgba(139,92,246,0.3);
+}

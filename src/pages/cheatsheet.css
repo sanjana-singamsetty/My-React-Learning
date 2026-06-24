@@ -1,0 +1,102 @@
+.cs-cats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 2rem;
+}
+
+.cs-cat-btn {
+  padding: 7px 16px;
+  border-radius: 20px;
+  border: 2px solid #e9e5ff;
+  background: white;
+  color: #6b7280;
+  font-weight: 700;
+  font-size: 0.84rem;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  transition: all 0.18s;
+}
+
+.cs-cat-btn:hover {
+  border-color: #8b5cf6;
+  color: #8b5cf6;
+}
+
+.cs-cat-btn.active {
+  color: white;
+  box-shadow: 0 2px 8px rgba(139,92,246,0.3);
+}
+
+.cs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  gap: 1.25rem;
+}
+
+.cs-card {
+  border: 2.5px solid #e9e5ff;
+  border-radius: 16px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 4px 4px 0 #e9e5ff;
+  transition: all 0.2s;
+  border-top: 4px solid var(--cs-color, #8b5cf6);
+}
+
+.cs-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 6px 6px 0 var(--cs-color, #8b5cf6);
+}
+
+.cs-card-header {
+  padding: 14px 16px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-bottom: 1.5px solid #f0edff;
+}
+
+.cs-title {
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: var(--cs-color, #8b5cf6);
+  font-family: 'Nunito', sans-serif;
+}
+
+.cs-desc {
+  font-size: 0.78rem;
+  color: #9090b0;
+  font-weight: 600;
+}
+
+.cs-code {
+  overflow-x: auto;
+}
+
+/* Dark mode */
+[data-theme="dark"] .cs-card {
+  background: #1a1a2e;
+  border-color: #2d2d4e;
+  box-shadow: 4px 4px 0 #2d2d4e;
+}
+
+[data-theme="dark"] .cs-card:hover {
+  box-shadow: 6px 6px 0 var(--cs-color, #8b5cf6);
+}
+
+[data-theme="dark"] .cs-card-header {
+  border-bottom-color: #2d2d4e;
+}
+
+[data-theme="dark"] .cs-cat-btn {
+  background: #1a1a2e;
+  border-color: #2d2d4e;
+  color: #7070a0;
+}
+
+[data-theme="dark"] .cs-code .token,
+[data-theme="dark"] .cs-code pre {
+  background: #0f0f1a !important;
+  color: #c0c0d0 !important;
+}
