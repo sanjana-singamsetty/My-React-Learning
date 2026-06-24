@@ -46,7 +46,7 @@ const MarkdownViewer: React.FC<MarkdownViewerProps> = ({ filePath }) => {
 
   useEffect(() => {
     setLoading(true);
-    markRead(filePath, file, color);
+    markRead(filePath, file, color); // eslint-disable-line react-hooks/exhaustive-deps
     fetch(filePath)
       .then((res) => {
         if (!res.ok) throw new Error("not found");
