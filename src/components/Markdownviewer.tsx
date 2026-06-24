@@ -46,7 +46,7 @@ const MarkdownViewer: React.FC<MarkdownViewerProps> = ({ filePath }) => {
 
   useEffect(() => {
     setLoading(true);
-    markRead(filePath, file, color); // eslint-disable-line react-hooks/exhaustive-deps
+    markRead(filePath, file, color);
     fetch(filePath)
       .then((res) => {
         if (!res.ok) throw new Error("not found");
@@ -57,7 +57,7 @@ const MarkdownViewer: React.FC<MarkdownViewerProps> = ({ filePath }) => {
         setContent("# Not Found\nCould not load this note.");
         setLoading(false);
       });
-  }, [filePath]);
+  }, [filePath]); // eslint-disable-line react-hooks/exhaustive-deps
 
   function saveNote(val: string) {
     setNote(val);
