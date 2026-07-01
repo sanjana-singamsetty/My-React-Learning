@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import {
   LayoutDashboard, Code2, Server, Database,
   FlaskConical, Network, Search, User, ChevronLeft, Menu, Sun, Moon,
-  Layers, BookMarked, Flame
+  Layers, BookMarked, Flame, GitBranch
 } from "lucide-react";
 import { useProgress } from "../context/ProgressContext";
 import { useTheme } from "../context/ThemeContext";
@@ -22,6 +22,7 @@ const menuItems = [
   { label: "Cheat Sheet", icon: BookMarked, route: "/cheatsheet" },
   { label: "Search", icon: Search, route: "/search" },
   { label: "About Me", icon: User, route: "/portfolio" },
+  { label: "Sys Design", icon: GitBranch, route: "/system-design" },
 ];
 
 const Sidebar: React.FC = () => {

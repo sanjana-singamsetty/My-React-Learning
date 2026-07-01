@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Bot, X, Send, Sparkles, Loader } from "lucide-react";
 import { useProgress } from "../context/ProgressContext";
+import { useSystemDesign } from "../context/SystemDesignContext";
 import "./AIAssistant.css";
 
 interface Message {
@@ -27,6 +28,20 @@ export default function AIAssistant() {
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const { readCount, recentlyVisited } = useProgress();
+  const { sdContext } = useSystemDesign();
+  const prevSdContextRef = useRef(sdContext);
+
+  // Auto-explain when sim node context changes (only if API key present)
+  useEffect(() => {
+    if (!sdContext || !GROQ_API_KEY) return;
+    if (sdContext === prevSdContextRef.current) return;
+    prevSdContextRef.current = sdContext;
+
+    const prompt = `I'm simulating "${sdContext.diagram}" (step ${sdContext.step}/${sdContext.totalSteps}). A packet arrived at "${sdContext.currentNode}". Rule fired: "${sdContext.ruleTriggered}". Packet: ${JSON.stringify(sdContext.packet)}. Path so far: ${sdContext.history.slice(-5).join(" → ")}. Explain this node's role in this flow and why it matters.`;
+    setIsOpen(true);
+    sendMessage(prompt);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sdContext]);
 
   useEffect(() => {
     if (isOpen) inputRef.current?.focus();
